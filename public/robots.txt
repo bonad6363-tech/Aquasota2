@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Прототип: заглушки документов не индексировать как действующие материалы
+Disallow: /dokumenty
+Disallow: /politika-konfidencialnosti
+Disallow: /korzina
+Disallow: /oformlenie-zakaza
+
+Sitemap: https://aquasota.ru/sitemap.xml
