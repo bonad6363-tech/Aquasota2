@@ -1,4 +1,4 @@
-/** Пути с учётом base (GitHub Pages: /aquasota2/). */
+/** Пути с учётом base (GitHub Pages: /Aquasota2/). */
 function asset(path: string) {
   const base = import.meta.env.BASE_URL || '/';
   return `${base}${path.replace(/^\//, '')}`;

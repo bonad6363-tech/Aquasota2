@@ -3,7 +3,7 @@
 Интернет-магазин-прототип бренда **АКВАСОТА** (производитель ООО «АКВАПЛЮС»).  
 Стек: React 19, TypeScript, Vite 8, React Router.
 
-Репозиторий: [bonad6363-tech/aquasota2](https://github.com/bonad6363-tech/aquasota2)
+Репозиторий: [bonad6363-tech/Aquasota2](https://github.com/bonad6363-tech/Aquasota2)
 
 ## Возможности
 
@@ -19,8 +19,8 @@
 Нужны **Node.js 20+** и npm.
 
 ```bash
-git clone https://github.com/bonad6363-tech/aquasota2.git
-cd aquasota2
+git clone https://github.com/bonad6363-tech/Aquasota2.git
+cd Aquasota2
 npm install
 npm run dev
 ```
@@ -39,7 +39,7 @@ npm run dev
 ## Структура проекта
 
 ```
-aquasota2/
+Aquasota2/
 ├── public/                 # Статика и изображения товаров
 │   └── images/
 ├── src/
@@ -103,12 +103,12 @@ aquasota2/
 
 При push в `main` срабатывает workflow `.github/workflows/deploy-pages.yml`.
 
-- `base` в Vite: `/aquasota2/` (см. `vite.config.ts`)
+- `base` в Vite: `/Aquasota2/` (см. `vite.config.ts`) — GitHub Pages чувствителен к имени репозитория
 - На Pages используется HashRouter (`VITE_HASH_ROUTER=true` в CI)
 
 После первого деплоя сайт будет доступен по адресу:
 
-`https://bonad6363-tech.github.io/aquasota2/`
+`https://bonad6363-tech.github.io/Aquasota2/`
 
 В настройках репозитория: **Settings → Pages → Source: GitHub Actions**.
 
@@ -127,4 +127,4 @@ aquasota2/
 
 ## Лицензия
 
-Проект частный (`private`). Использование — по согласованию с владельцем репозитория.
+Проект частный (`private` в package.json). Использование — по согласованию с владельцем репозитория.
