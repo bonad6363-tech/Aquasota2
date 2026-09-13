@@ -24,3 +24,19 @@
 .doc-card .btn {
   width: 100%;
 }
+
+.how-it-works__diagram {
+  margin-top: 28px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.how-it-works__diagram img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: #fff;
+}

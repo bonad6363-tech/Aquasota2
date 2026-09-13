@@ -42,8 +42,8 @@ export function HomePage() {
             </div>
           </div>
           <div className="hero__media">
-            <MediaImg src={images.heroProduct} alt="Струя чистой воды и переносной фильтр АКВАСОТА" priority />
-            <MediaImg src={images.glassWater} alt="Чистая вода в прозрачном стакане" />
+            <MediaImg src={images.akvasota2} alt="Аквасота-2 — переносной фильтр для очистки воды" priority />
+            <MediaImg src={images.akvasota1} alt="Аквасота-1 — переносной фильтр для очистки воды" />
           </div>
         </section>
 
@@ -129,7 +129,7 @@ export function HomePage() {
               Весь каталог
             </Link>
           </div>
-          <div className="cards-4" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+          <div className="cards-4">
             {popular.map((product) => (
               <ProductCard key={product.slug} product={product} />
             ))}
@@ -210,8 +210,20 @@ export function HomePage() {
             <article className="step">
               <div className="step__num">3</div>
               <h3>Очищенная вода поступает в ёмкость</h3>
-              <p className="muted">Нормальный режим — капельный. Точные показатели очистки будут добавлены после протоколов.</p>
+              <p className="muted">Нормальный режим — капельный. Перепад высоты между ёмкостями — от 0,2 до 1,0 м.</p>
             </article>
+          </div>
+          <div className="how-it-works__diagram">
+            <MediaImg
+              src={images.aquasotaHowItWorks}
+              alt="Схема работы фильтра АКВАСОТА: ёмкость с исходной водой выше ёмкости с очищенной, перепад 0,2–1,0 м"
+            />
+          </div>
+          <div className="how-it-works__diagram" style={{ marginTop: 20 }}>
+            <MediaImg
+              src={images.aquasota2Kit}
+              alt="Комплектация Аквасота-2: фильтр, трубка 1,5 м, сумка"
+            />
           </div>
         </div>
       </section>
