@@ -22,9 +22,10 @@ export function getQuizResult(answers: QuizAnswers): QuizResult {
   const larger = portable.find((item) => item.slug === 'akvasota-2');
 
   if (answers.type === 'stationary') {
+    const stationary = products.filter((item) => item.category === 'magistralnye-filtry');
     return {
-      products: portable,
-      note: 'Магистральные фильтры готовятся к публикации. Пока можно выбрать переносную модель или оставить заявку на консультацию.',
+      products: stationary,
+      note: 'Для стационарной предварительной очистки подойдут магистральные дисковые фильтры. Размер подключения уточните перед заказом.',
     };
   }
 

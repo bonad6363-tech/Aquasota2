@@ -38,6 +38,7 @@ export interface Product {
   care: string[];
   faq: { question: string; answer: string }[];
   price: number;
+  priceOnRequest?: boolean;
   oldPrice?: number;
   inStock: boolean;
   popularity: number;

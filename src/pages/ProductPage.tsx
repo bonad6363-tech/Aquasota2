@@ -125,14 +125,14 @@ export function ProductPage() {
             ))}
           </ul>
           <div className="price-row">
-            <span className="price">{formatPrice(product.price)}</span>
+            <span className="price">{product.priceOnRequest ? 'Цена уточняется' : formatPrice(product.price)}</span>
             {product.oldPrice ? <span className="price--old">{formatPrice(product.oldPrice)}</span> : null}
           </div>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
             <Quantity value={qty} onChange={setQty} />
             <Button
               variant={added ? 'success' : 'primary'}
-              disabled={!product.inStock}
+              disabled={!product.inStock || product.priceOnRequest}
               onClick={() => {
                 add(product.slug, qty);
                 setAdded(true);
