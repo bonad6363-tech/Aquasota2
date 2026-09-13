@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { CartProvider } from './context/CartContext';
 import { AboutPage } from './pages/AboutPage';
@@ -15,9 +15,11 @@ import { PrivacyPage } from './pages/PrivacyPage';
 import { ProductPage } from './pages/ProductPage';
 
 export default function App() {
+  const Router = import.meta.env.VITE_HASH_ROUTER === 'true' ? HashRouter : BrowserRouter;
+
   return (
     <CartProvider>
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<HomePage />} />
@@ -35,7 +37,7 @@ export default function App() {
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </Router>
     </CartProvider>
   );
 }
