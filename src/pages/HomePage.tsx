@@ -1,4 +1,4 @@
-import { Droplets, Factory, FileCheck, Truck } from 'lucide-react';
+import { ArrowRight, Droplets, Factory, FileCheck, Truck } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Accordion } from '../components/Accordion';
@@ -8,6 +8,7 @@ import { MediaImg } from '../components/MediaImg';
 import { ProductCard } from '../components/ProductCard';
 import { organizationJsonLd, Seo } from '../components/Seo';
 import { companyInfo } from '../data/company';
+import { categories } from '../data/categories';
 import { faqItems } from '../data/faq';
 import { images } from '../data/images';
 import { getComparableProducts, getPopularProducts } from '../data/products';
@@ -26,28 +27,83 @@ export function HomePage() {
         path="/"
         jsonLd={organizationJsonLd()}
       />
-      <div className="container">
-        <section className="hero">
+      <section className="hero">
+        <MediaImg
+          className="hero__image"
+          src={images.heroShowcase}
+          alt="Переносной фильтр Аквасота-2 на фоне чистой воды"
+          priority
+        />
+        <div className="hero__veil" />
+        <div className="container hero__inner">
           <div className="hero__copy">
-            <p className="eyebrow">ООО «АКВАПЛЮС», Россия</p>
+            <p className="eyebrow">Российское производство · доставка по России</p>
             <h1>{companyInfo.tagline}</h1>
             <p>{companyInfo.subtitle}</p>
             <div className="hero__actions">
               <Link className="btn btn--primary" to="/#podbor">
                 Подобрать фильтр
               </Link>
-              <Link className="btn btn--secondary" to="/katalog">
+              <Link className="btn btn--secondary hero__secondary" to="/katalog">
                 Смотреть каталог
               </Link>
             </div>
+            <div className="hero__notes" aria-label="Ключевые преимущества">
+              <span>Без электричества</span>
+              <span>Компактный формат</span>
+              <span>Помощь в подборе</span>
+            </div>
           </div>
-          <div className="hero__media">
-            <MediaImg src={images.akvasota2} alt="Аквасота-2 — переносной фильтр для очистки воды" priority />
-            <MediaImg src={images.akvasota1} alt="Аквасота-1 — переносной фильтр для очистки воды" />
-          </div>
-        </section>
+        </div>
+      </section>
 
-        <div className="perks">
+      <section className="section section--collections">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <p className="eyebrow">Каталог</p>
+              <h2>Выберите решение для чистой воды</h2>
+            </div>
+            <Link className="text-link" to="/katalog">
+              Смотреть всё <ArrowRight size={18} />
+            </Link>
+          </div>
+          <div className="collection-grid">
+            {categories.map((category) => (
+              <Link className="collection-card" key={category.slug} to={`/katalog/${category.slug}`}>
+                <MediaImg src={category.image} alt={category.imageAlt} />
+                <div className="collection-card__shade" />
+                <div className="collection-card__copy">
+                  <h3>{category.shortName}</h3>
+                  <span>Перейти в раздел <ArrowRight size={16} /></span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section popular-section">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <p className="eyebrow">Выбор покупателей</p>
+              <h2>Популярные товары</h2>
+            </div>
+            <Link className="btn btn--secondary" to="/katalog">
+              Весь каталог
+            </Link>
+          </div>
+          <div className="cards-4">
+            {popular.map((product) => (
+              <ProductCard key={product.slug} product={product} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="container">
+        <div className="perks perks--feature-strip">
           <article className="perk">
             <Factory size={22} color="#123B52" />
             <div>
@@ -72,7 +128,7 @@ export function HomePage() {
         </div>
       </div>
 
-      <section className="section">
+      <section className="section scenario-section">
         <div className="container">
           <div className="section-head">
             <div>
@@ -115,25 +171,6 @@ export function HomePage() {
             </div>
           </div>
           <Quiz />
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
-          <div className="section-head">
-            <div>
-              <p className="eyebrow">Каталог</p>
-              <h2>Популярные товары</h2>
-            </div>
-            <Link className="btn btn--secondary" to="/katalog">
-              Весь каталог
-            </Link>
-          </div>
-          <div className="cards-4">
-            {popular.map((product) => (
-              <ProductCard key={product.slug} product={product} />
-            ))}
-          </div>
         </div>
       </section>
 

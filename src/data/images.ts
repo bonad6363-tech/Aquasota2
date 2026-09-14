@@ -10,7 +10,8 @@ function asset(path: string) {
  */
 export const images = {
   logo: asset('logo-aquasota.png'),
-  heroProduct: asset('images/akvasota-2.png'),
+  heroProduct: asset('images/hero-aquasota-2-v2.webp'),
+  heroShowcase: asset('images/hero-aquasota-2-v2.webp'),
   glassWater: asset('images/akvasota-1.png'),
   scenarioHome: asset('images/scenario-home.webp'),
   scenarioDacha: asset('images/scenario-dacha.webp'),
@@ -21,9 +22,9 @@ export const images = {
   productPortable2: asset('images/akvasota-2.png'),
   productHome: asset('images/disc-filter-housing.png'),
   productTube: asset('images/product-tube.png'),
-  videoCover: asset('images/akvasota-2.png'),
+  videoCover: asset('images/hero-aquasota-2-v2.webp'),
   control: asset('images/control.webp'),
-  ogCover: asset('images/akvasota-2.png'),
+  ogCover: asset('images/hero-aquasota-2-v2.webp'),
   akvasota1: asset('images/akvasota-1.png'),
   akvasota2: asset('images/akvasota-2.png'),
   discFilterHousing: asset('images/disc-filter-housing.png'),
