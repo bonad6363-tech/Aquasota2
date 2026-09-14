@@ -16,6 +16,7 @@ export const images = {
   scenarioHome: asset('images/scenario-home.webp'),
   scenarioDacha: asset('images/scenario-dacha.webp'),
   scenarioTravel: asset('images/scenario-travel.webp'),
+  portableKit: asset('images/portable-kit.webp'),
   production: asset('images/production.webp'),
   membrane: asset('images/membrane.webp'),
   productPortable: asset('images/akvasota-1.png'),

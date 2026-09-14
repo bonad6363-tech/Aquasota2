@@ -70,7 +70,11 @@ export function HomePage() {
           </div>
           <div className="collection-grid">
             {categories.map((category) => (
-              <Link className="collection-card" key={category.slug} to={`/katalog/${category.slug}`}>
+              <Link
+                className={`collection-card collection-card--${category.slug}`}
+                key={category.slug}
+                to={`/katalog/${category.slug}`}
+              >
                 <MediaImg src={category.image} alt={category.imageAlt} />
                 <div className="collection-card__shade" />
                 <div className="collection-card__copy">
@@ -141,21 +145,21 @@ export function HomePage() {
               title="Для дома"
               text="Переносной фильтр рядом с кухонной ёмкостью, если нет стационарной системы."
               src={images.scenarioHome}
-              alt="Светлая кухня — сценарий использования фильтра дома"
+              alt="Стакан чистой воды на современной кухне"
               to="/katalog/perenosnye-filtry"
             />
             <ScenarioCard
               title="Для дачи"
               text="Очистка воды без электричества, когда источник воды не городской водопровод."
               src={images.scenarioDacha}
-              alt="Загородный дом у воды — сценарий использования фильтра на даче"
+              alt="Загородный дом с садом — использование фильтра на даче"
               to="/katalog/perenosnye-filtry"
             />
             <ScenarioCard
               title="Для путешествий"
               text="Компактный формат для поездок, походов и временного жилья."
               src={images.scenarioTravel}
-              alt="Спокойная туристическая сцена у горного озера"
+              alt="Путешественники с палаткой у озера"
               to="/katalog/perenosnye-filtry"
             />
           </div>

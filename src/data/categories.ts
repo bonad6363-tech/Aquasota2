@@ -8,8 +8,8 @@ export const categories: Category[] = [
     shortName: 'Переносные',
     description:
       'Компактные фильтры без подключения к электричеству. Подходят для дома, дачи и поездок.',
-    image: images.scenarioTravel,
-    imageAlt: 'Походная сцена у воды — сценарий использования переносного фильтра',
+    image: images.portableKit,
+    imageAlt: 'Комплектация переносного фильтра Аквасота-2: фильтр, трубка и сумка',
   },
   {
     slug: 'magistralnye-filtry',
@@ -17,8 +17,8 @@ export const categories: Category[] = [
     shortName: 'Магистральные',
     description:
       'Стационарные решения для дома. Ассортимент этой категории готовится к публикации.',
-    image: images.productHome,
-    imageAlt: 'Светлый домашний интерьер у воды — сценарий для магистрального фильтра',
+    image: images.scenarioHome,
+    imageAlt: 'Чистая вода на современной кухне',
   },
   {
     slug: 'smennye-kartridzhi',
