@@ -342,7 +342,7 @@ h3 {
 
 .hero {
   position: relative;
-  min-height: min(680px, calc(100vh - var(--header)));
+  min-height: min(540px, calc(100vh - var(--header)));
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -1258,7 +1258,7 @@ th {
   }
 
   .hero {
-    min-height: 620px;
+    min-height: 560px;
   }
 
   .hero__image {
@@ -1295,7 +1295,7 @@ th {
   }
 
   .hero {
-    min-height: 760px;
+    min-height: 650px;
     align-items: flex-start;
   }
 
@@ -1308,7 +1308,7 @@ th {
   }
 
   .hero__copy {
-    padding: 46px 0 280px;
+    padding: 42px 0 220px;
     gap: 18px;
   }
 

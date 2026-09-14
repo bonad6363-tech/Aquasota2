@@ -254,17 +254,21 @@ export function HomePage() {
               <p className="muted">Нормальный режим — капельный. Перепад высоты между ёмкостями — от 0,2 до 1,0 м.</p>
             </article>
           </div>
-          <div className="how-it-works__diagram">
-            <MediaImg
-              src={images.aquasotaHowItWorks}
-              alt="Схема работы фильтра АКВАСОТА: ёмкость с исходной водой выше ёмкости с очищенной, перепад 0,2–1,0 м"
-            />
-          </div>
-          <div className="how-it-works__diagram" style={{ marginTop: 20 }}>
-            <MediaImg
-              src={images.aquasota2Kit}
-              alt="Комплектация Аквасота-2: фильтр, трубка 1,5 м, сумка"
-            />
+          <div className="how-it-works__gallery">
+            <figure className="how-it-works__diagram">
+              <MediaImg
+                src={images.aquasotaHowItWorks}
+                alt="Схема работы фильтра АКВАСОТА: ёмкость с исходной водой выше ёмкости с очищенной, перепад 0,2–1,0 м"
+              />
+              <figcaption>Схема подключения</figcaption>
+            </figure>
+            <figure className="how-it-works__diagram">
+              <MediaImg
+                src={images.aquasota2Kit}
+                alt="Комплектация Аквасота-2: фильтр, трубка 1,5 м, сумка"
+              />
+              <figcaption>Комплектация Аквасота-2</figcaption>
+            </figure>
           </div>
         </div>
       </section>
