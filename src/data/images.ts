@@ -9,7 +9,7 @@ function asset(path: string) {
  * Товарные фото Аквасота-1 / Аквасота-2 — макеты заказчика.
  */
 export const images = {
-  logo: asset('logo-aquasota.png'),
+  logo: asset('logo-aquasota-clean.png'),
   heroProduct: asset('images/hero-aquasota-2-v2.webp'),
   heroShowcase: asset('images/hero-aquasota-2-v2.webp'),
   glassWater: asset('images/akvasota-1.png'),
