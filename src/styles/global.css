@@ -573,9 +573,10 @@ h3 {
 .media-card__img {
   width: 100%;
   height: 180px;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
-  background: #dceef8;
+  background: #eaf6fb;
+  box-shadow: inset 0 0 0 3px #7ec8de;
 }
 
 .product-card__image {

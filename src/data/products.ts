@@ -141,7 +141,7 @@ export const products: Product[] = [
     popularity: 100,
     images: [
       { src: images.akvasota2, alt: 'Аквасота-2 — переносной фильтр с защитой от хлора' },
-      { src: images.aquasota2Kit, alt: 'Комплектация Аквасота-2: фильтр, трубка 1,5 м, сумка' },
+      { src: images.aquasota2Kit, alt: 'Комплектация Аквасота-1 и Аквасота-2: фильтр, трубка 1,5 м, сумка' },
       { src: images.aquasotaHowItWorks, alt: 'Схема работы фильтра Аквасота: перепад высоты ёмкостей 0,2–1,0 м' },
       { src: images.akvasota1, alt: 'Аквасота-1 — компактная модель линейки' },
     ],

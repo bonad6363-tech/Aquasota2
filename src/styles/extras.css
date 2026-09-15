@@ -39,7 +39,8 @@
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--white);
-  border: 1px solid var(--line);
+  border: 3px solid #7ec8de;
+  box-shadow: 0 8px 24px rgba(54, 169, 197, 0.12);
 }
 
 .how-it-works__diagram img {
@@ -47,14 +48,16 @@
   aspect-ratio: 1;
   display: block;
   object-fit: contain;
-  background: #fff;
+  background: #eaf6fb;
+  box-sizing: border-box;
 }
 
 .how-it-works__diagram figcaption {
   padding: 14px 18px 16px;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(54, 169, 197, 0.25);
   color: var(--navy);
   font-weight: 700;
+  background: #f3fafc;
 }
 
 @media (max-width: 767px) {

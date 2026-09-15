@@ -266,9 +266,9 @@ export function HomePage() {
             <figure className="how-it-works__diagram">
               <MediaImg
                 src={images.aquasota2Kit}
-                alt="Комплектация Аквасота-2: фильтр, трубка 1,5 м, сумка"
+                alt="Комплектация Аквасота-1 и Аквасота-2: фильтр, трубка 1,5 м, сумка"
               />
-              <figcaption>Комплектация Аквасота-2</figcaption>
+              <figcaption>Комплектация Аквасота-1 и Аквасота-2</figcaption>
             </figure>
           </div>
         </div>
