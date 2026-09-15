@@ -47,7 +47,10 @@ body {
   margin: 0;
   font-family: Manrope, Arial, sans-serif;
   color: var(--text);
-  background: var(--ice);
+  background:
+    radial-gradient(ellipse 70% 42% at 50% 0%, rgba(54, 169, 197, 0.14), transparent 60%),
+    linear-gradient(90deg, #e4eef3 0%, var(--ice) 10%, var(--ice) 90%, #e4eef3 100%);
+  background-attachment: fixed;
   font-size: 17px;
   line-height: 1.55;
 }
@@ -342,7 +345,8 @@ h3 {
 
 .hero {
   padding: 46px 0;
-  background: linear-gradient(135deg, #f4f8f9 0%, #eaf5f8 100%);
+  background: linear-gradient(120deg, #e8f5f9 0%, #f4f8f9 42%, #dff0f6 100%);
+  border-bottom: 1px solid rgba(18, 59, 82, 0.06);
 }
 
 .hero__layout {
@@ -419,7 +423,8 @@ h3 {
 }
 
 .section--collections {
-  background: var(--white);
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbfd 100%);
+  border-bottom: 1px solid rgba(18, 59, 82, 0.05);
 }
 
 .text-link {
@@ -494,7 +499,7 @@ h3 {
 }
 
 .popular-section {
-  background: #eef7fa;
+  background: linear-gradient(180deg, #e8f4f8 0%, #eef7fa 55%, #f4f8f9 100%);
 }
 
 .perks--feature-strip {
@@ -506,6 +511,7 @@ h3 {
 
 .scenario-section {
   padding-top: 150px;
+  background: linear-gradient(180deg, #f4f8f9 0%, #eaf5f8 40%, #ffffff 100%);
 }
 
 .perks {
@@ -1094,10 +1100,10 @@ th {
 }
 
 .footer {
-  background: var(--navy);
+  background: linear-gradient(180deg, #0f3347 0%, #0b2838 100%);
   color: #d7e4ea;
   padding: 56px 0 28px;
-  margin-top: 48px;
+  margin-top: 0;
 }
 
 .footer a:hover {

@@ -176,3 +176,27 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Full-bleed section bands — content stays in .container */
+.section.band-ice {
+  background: linear-gradient(180deg, #eaf5f8 0%, #f4f8f9 100%);
+}
+
+.section.band-white {
+  background: #fff;
+}
+
+#podbor,
+#faq {
+  background: #fff;
+}
+
+#consult {
+  background: linear-gradient(180deg, #f4f8f9 0%, #eaf5f8 100%);
+}
+
+@media (max-width: 767px) {
+  body {
+    background-attachment: scroll;
+  }
+}
