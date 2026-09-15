@@ -28,14 +28,7 @@ export function HomePage() {
         jsonLd={organizationJsonLd()}
       />
       <section className="hero">
-        <MediaImg
-          className="hero__image"
-          src={images.heroShowcase}
-          alt="Переносной фильтр Аквасота-2 на фоне чистой воды"
-          priority
-        />
-        <div className="hero__veil" />
-        <div className="container hero__inner">
+        <div className="container hero__layout">
           <div className="hero__copy">
             <p className="eyebrow">Российское производство · доставка по России</p>
             <h1>{companyInfo.tagline}</h1>
@@ -53,6 +46,14 @@ export function HomePage() {
               <span>Компактный формат</span>
               <span>Помощь в подборе</span>
             </div>
+          </div>
+          <div className="hero__media">
+            <MediaImg
+              className="hero__image"
+              src={images.heroShowcase}
+              alt="Переносной фильтр Аквасота-2 на фоне чистой воды"
+              priority
+            />
           </div>
         </div>
       </section>
@@ -293,19 +294,6 @@ export function HomePage() {
                 <span className="badge badge--wait">Скоро</span>
               </article>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container stack-lg">
-          <div>
-            <p className="eyebrow">Инструкция</p>
-            <h2>Видеоинструкция</h2>
-          </div>
-          <div className="video-cover">
-            <MediaImg src={images.videoCover} alt="Обложка будущего видео с запуском фильтра АКВАСОТА" />
-            <div className="video-cover__label">Видео будет добавлено</div>
           </div>
         </div>
       </section>
