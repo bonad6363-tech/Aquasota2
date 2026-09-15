@@ -373,7 +373,7 @@ h3 {
   display: grid;
   gap: 22px;
   max-width: 620px;
-  padding: 72px 0;
+  padding: 72px 0 72px 28px;
 }
 
 .hero__copy h1 {
@@ -571,10 +571,13 @@ h3 {
   box-shadow: var(--shadow);
 }
 
-.media-card img {
+.media-card img,
+.media-card__img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  height: 180px;
+  object-fit: contain;
+  object-position: center;
+  background: #dceef8;
 }
 
 .product-card__image {
@@ -1379,7 +1382,7 @@ th {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   .filters-toggle {
     display: none;
   }

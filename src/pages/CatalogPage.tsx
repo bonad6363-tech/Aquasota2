@@ -91,7 +91,7 @@ export function CatalogPage() {
         <div className="cards-4" style={{ margin: '28px 0' }}>
           {categories.map((item) => (
             <Link className="media-card" key={item.slug} to={`/katalog/${item.slug}`}>
-              <img src={item.image} alt={item.imageAlt} height={180} style={{ width: '100%', height: 160, objectFit: 'cover' }} />
+              <img src={item.image} alt={item.imageAlt} className="media-card__img" />
               <div className="media-card__body">
                 <h3>{item.name}</h3>
                 <p className="muted">{item.description}</p>
@@ -101,14 +101,11 @@ export function CatalogPage() {
         </div>
       ) : null}
 
-      <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, margin: '20px 0' }}>
+      <div className="catalog-toolbar">
         <Button className="filters-toggle" variant="secondary" onClick={() => setFiltersOpen(true)}>
           <SlidersHorizontal size={18} /> Фильтры
         </Button>
-      </div>
-
-      <div className="catalog-layout" style={{ marginBottom: 80 }}>
-        <aside className="filters desktop-filters">
+        <div className="filters filters--row desktop-filters">
           <Filters
             query={query}
             setQuery={setQuery}
@@ -124,8 +121,12 @@ export function CatalogPage() {
             setSort={setSort}
             reset={reset}
             lockCategory={Boolean(activeCategory)}
+            compact
           />
-        </aside>
+        </div>
+      </div>
+
+      <div className="catalog-main" style={{ marginBottom: 80 }}>
         <div className="stack-lg">
           {chips.length > 0 ? (
             <div className="chips">
@@ -198,6 +199,7 @@ function Filters(props: {
   setSort: (value: SortKey) => void;
   reset: () => void;
   lockCategory: boolean;
+  compact?: boolean;
 }) {
   return (
     <>
@@ -220,14 +222,18 @@ function Filters(props: {
           ))}
         </select>
       </label>
-      <label className="field">
-        <span>Цена от</span>
-        <input inputMode="numeric" value={props.minPrice} onChange={(event) => props.setMinPrice(event.target.value)} />
-      </label>
-      <label className="field">
-        <span>Цена до</span>
-        <input inputMode="numeric" value={props.maxPrice} onChange={(event) => props.setMaxPrice(event.target.value)} />
-      </label>
+      {!props.compact ? (
+        <>
+          <label className="field">
+            <span>Цена от</span>
+            <input inputMode="numeric" value={props.minPrice} onChange={(event) => props.setMinPrice(event.target.value)} />
+          </label>
+          <label className="field">
+            <span>Цена до</span>
+            <input inputMode="numeric" value={props.maxPrice} onChange={(event) => props.setMaxPrice(event.target.value)} />
+          </label>
+        </>
+      ) : null}
       <label className="check">
         <input type="checkbox" checked={props.onlyStock} onChange={(event) => props.setOnlyStock(event.target.checked)} />
         <span>Только в наличии</span>

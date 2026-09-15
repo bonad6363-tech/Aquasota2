@@ -145,21 +145,21 @@ export function HomePage() {
               title="Для дома"
               text="Переносной фильтр рядом с кухонной ёмкостью, если нет стационарной системы."
               src={images.scenarioHome}
-              alt="Стакан чистой воды на современной кухне"
+              alt="Стакан чистой воды на кухне — сценарий использования фильтра дома"
               to="/katalog/perenosnye-filtry"
             />
             <ScenarioCard
               title="Для дачи"
               text="Очистка воды без электричества, когда источник воды не городской водопровод."
               src={images.scenarioDacha}
-              alt="Загородный дом с садом — использование фильтра на даче"
+              alt="Загородный дом с садом — сценарий использования фильтра на даче"
               to="/katalog/perenosnye-filtry"
             />
             <ScenarioCard
               title="Для путешествий"
               text="Компактный формат для поездок, походов и временного жилья."
               src={images.scenarioTravel}
-              alt="Путешественники с палаткой у озера"
+              alt="Кемпинг у озера — сценарий использования фильтра в путешествии"
               to="/katalog/perenosnye-filtry"
             />
           </div>
@@ -363,29 +363,23 @@ export function HomePage() {
       </section>
 
       <section className="section" id="consult">
-        <div className="container two-col">
-          <div className="stack">
+        <div className="container consult-block">
+          <div className="consult-block__copy stack">
             <p className="eyebrow">Консультация</p>
             <h2>Поможем выбрать подходящий фильтр</h2>
             <p className="lead">Оставьте имя и телефон. Перезвоним в рабочие часы: {companyInfo.workdays}.</p>
+            <div className="consult-block__about">
+              <h3>Коротко о фильтрах АКВАСОТА</h3>
+              <p className="muted">
+                АКВАСОТА — линейка фильтров российского производителя ООО «АКВАПЛЮС». В каталоге — переносные модели
+                Аквасота-1 и Аквасота-2, магистральные фильтры, аксессуары и сменные элементы. Доставка через СДЭК по
+                России. Самовывоз — в Королёве, ул. Дурылина, 39А, после предварительного заказа.
+              </p>
+            </div>
           </div>
           <div className="info-card">
             <ConsultForm />
           </div>
-        </div>
-      </section>
-
-      <section className="section seo-block">
-        <div className="container">
-          <Accordion
-            items={[
-              {
-                question: 'Коротко о фильтрах АКВАСОТА',
-                answer:
-                  'АКВАСОТА — линейка фильтров российского производителя ООО «АКВАПЛЮС». В каталоге сейчас доступны переносные модели Аквасота-1 и Аквасота-2, а также трубка ПВХ. Магистральные фильтры и сменные картриджи появятся после подтверждения ассортимента. Доставка — через СДЭК по России. Самовывоз — в Королёве, ул. Дурылина, 39А, после предварительного заказа.',
-              },
-            ]}
-          />
         </div>
       </section>
     </>

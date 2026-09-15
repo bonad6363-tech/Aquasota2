@@ -50,7 +50,7 @@ export function Footer() {
       </div>
       <div className="container footer__bottom">
         <span>{companyInfo.copyright}</span>
-        <span>{companyInfo.legalName}, {companyInfo.country}</span>
+        <span>{companyInfo.offerDisclaimer}</span>
       </div>
     </footer>
   );
