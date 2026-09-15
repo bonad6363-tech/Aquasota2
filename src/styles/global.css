@@ -23,6 +23,7 @@ html {
   --shadow: 0 10px 30px rgba(18, 59, 82, 0.07);
   --radius: 22px;
   --radius-sm: 12px;
+  /* Эталон «резиновой» ширины (скрины заказчика): не уже без нужды, не шире 1680. */
   --max: 1680px;
   --header: 88px;
   --header-compact: 68px;
@@ -114,6 +115,7 @@ h3 {
   top: 12px;
 }
 
+/* Контент: ~92vw до потолка --max — поля по бокам как на эталонных фото. */
 .container {
   width: min(calc(100% - 48px), 92vw, var(--max));
   margin: 0 auto;
