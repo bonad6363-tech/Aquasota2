@@ -23,7 +23,7 @@ html {
   --shadow: 0 10px 30px rgba(18, 59, 82, 0.07);
   --radius: 22px;
   --radius-sm: 12px;
-  --max: 1440px;
+  --max: 1680px;
   --header: 88px;
   --header-compact: 68px;
   --ease: 220ms ease;
@@ -115,7 +115,7 @@ h3 {
 }
 
 .container {
-  width: min(calc(100% - 40px), var(--max));
+  width: min(calc(100% - 48px), 92vw, var(--max));
   margin: 0 auto;
 }
 
@@ -1263,7 +1263,7 @@ th {
 
 @media (max-width: 767px) {
   .container {
-    width: min(calc(100% - 32px), var(--max));
+    width: min(calc(100% - 32px), 94vw, var(--max));
   }
 
   .cards-4,
