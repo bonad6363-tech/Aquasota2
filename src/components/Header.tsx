@@ -4,7 +4,10 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { categories } from '../data/categories';
 import { companyInfo } from '../data/company';
+import { navigation } from '../data/navigation';
 import { Logo } from './Logo';
+
+const otherNav = navigation.filter((item) => item.to !== '/katalog');
 
 export function Header() {
   const { count } = useCart();
@@ -43,7 +46,7 @@ export function Header() {
         <Link to="/" aria-label="АКВАСОТА — на главную">
           <Logo />
         </Link>
-        <nav className="nav nav--simple" aria-label="Основная навигация">
+        <nav className="nav" aria-label="Основная навигация">
           <NavLink to="/" end className={({ isActive }) => (isActive ? 'is-active' : '')}>
             Главная
           </NavLink>
@@ -69,6 +72,17 @@ export function Header() {
               </div>
             ) : null}
           </div>
+          {otherNav.map((item) =>
+            item.to.includes('#') ? (
+              <Link key={item.to} to={item.to}>
+                {item.label}
+              </Link>
+            ) : (
+              <NavLink key={item.to} to={item.to} className={({ isActive }) => (isActive ? 'is-active' : '')}>
+                {item.label}
+              </NavLink>
+            ),
+          )}
         </nav>
         <div className="header__actions">
           <a className="header__phone" href={companyInfo.phoneHref}>
@@ -107,6 +121,15 @@ export function Header() {
                   style={{ minHeight: 44, display: 'flex', alignItems: 'center', fontWeight: 600, paddingLeft: 12 }}
                 >
                   {item.name}
+                </Link>
+              ))}
+              {otherNav.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  style={{ minHeight: 48, display: 'flex', alignItems: 'center', fontWeight: 700 }}
+                >
+                  {item.label}
                 </Link>
               ))}
               <a href={companyInfo.phoneHref} style={{ minHeight: 48, display: 'flex', alignItems: 'center', fontWeight: 700 }}>
