@@ -179,7 +179,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .hero--banner .hero__atmosphere-img {
-    filter: none;
+    filter: saturate(0.72) brightness(1.04);
     opacity: 0.35;
     transform: none;
   }

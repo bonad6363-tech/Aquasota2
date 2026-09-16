@@ -50,14 +50,6 @@ export function HomePage() {
               <span>Помощь в подборе</span>
             </div>
           </div>
-          <div className="hero__media">
-            <MediaImg
-              className="hero__image"
-              src={images.heroShowcase}
-              alt="Переносной фильтр Аквасота-2 на фоне чистой воды"
-              priority
-            />
-          </div>
         </div>
       </section>
 

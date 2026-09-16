@@ -349,9 +349,12 @@ h3 {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: 46px 0;
+  min-height: clamp(520px, 37.5vw, 720px);
+  padding: 56px 0;
   background: #eaf6fa;
   border-bottom: 1px solid rgba(18, 59, 82, 0.06);
+  display: flex;
+  align-items: center;
 }
 
 .hero--banner .hero__atmosphere {
@@ -362,35 +365,42 @@ h3 {
 }
 
 .hero--banner .hero__atmosphere-img {
-  width: 115%;
-  height: 115%;
+  width: 100%;
+  height: 100%;
   max-width: none;
   object-fit: cover;
-  object-position: 72% center;
-  filter: blur(32px) saturate(1.12);
-  opacity: 0.72;
-  transform: translate(-4%, -4%) scale(1.06);
+  object-position: center;
+  filter: saturate(0.72) brightness(1.04) contrast(0.96);
+  opacity: 1;
+  transform: none;
 }
 
 .hero--banner .hero__atmosphere::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(244, 248, 249, 0.92) 0%,
-    rgba(234, 246, 250, 0.78) 34%,
-    rgba(234, 246, 250, 0.28) 58%,
-    rgba(234, 246, 250, 0.08) 78%,
-    transparent 100%
-  );
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(244, 248, 249, 0.14) 52%,
+      rgba(244, 248, 249, 0.28) 68%,
+      rgba(255, 255, 255, 0.34) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.78) 0%,
+      rgba(244, 248, 249, 0.5) 28%,
+      rgba(244, 248, 249, 0.16) 48%,
+      transparent 62%
+    );
 }
 
 .hero__layout {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr);
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
   gap: 28px;
 }
@@ -400,6 +410,7 @@ h3 {
   gap: 18px;
   max-width: 560px;
   padding-left: 12px;
+  text-shadow: 0 1px 18px rgba(255, 255, 255, 0.72);
 }
 
 .hero__copy h1 {
@@ -424,7 +435,7 @@ h3 {
 }
 
 .hero__media {
-  display: flex;
+  display: none;
   justify-content: flex-end;
   align-items: center;
   overflow: visible;
@@ -1292,7 +1303,7 @@ th {
   }
 
   .hero__layout {
-    grid-template-columns: minmax(0, 0.9fr) minmax(380px, 1.1fr);
+    grid-template-columns: 1fr;
     gap: 24px;
   }
 
@@ -1322,7 +1333,9 @@ th {
   }
 
   .hero {
-    padding: 36px 0;
+    min-height: 640px;
+    padding: 40px 0;
+    align-items: flex-start;
   }
 
   .hero__layout {
@@ -1331,18 +1344,15 @@ th {
   }
 
   .hero--banner .hero__atmosphere-img {
-    object-position: center 30%;
-    opacity: 0.55;
-    filter: blur(24px) saturate(1.08);
+    object-position: 72% center;
+    opacity: 1;
+    filter: saturate(0.68) brightness(1.05) contrast(0.95);
   }
 
   .hero--banner .hero__atmosphere::after {
-    background: linear-gradient(
-      180deg,
-      rgba(244, 248, 249, 0.88) 0%,
-      rgba(234, 246, 250, 0.55) 42%,
-      rgba(234, 246, 250, 0.2) 100%
-    );
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(244, 248, 249, 0.82) 48%, rgba(244, 248, 249, 0.22) 78%),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.72) 0%, rgba(244, 248, 249, 0.32) 58%, rgba(255, 255, 255, 0.38) 100%);
   }
 
   .hero__copy {

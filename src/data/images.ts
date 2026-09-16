@@ -11,7 +11,7 @@ function asset(path: string) {
 export const images = {
   logo: asset('logo-aquasota-clean.png'),
   heroProduct: asset('images/hero-aquasota-2-v3.webp'),
-  heroShowcase: asset('images/hero-aquasota-2-v3.webp'),
+  heroShowcase: asset('images/hero-aquasota-kit-v4.webp'),
   glassWater: asset('images/akvasota-1.png'),
   scenarioHome: asset('images/scenario-home.webp'),
   scenarioDacha: asset('images/scenario-dacha.webp'),
