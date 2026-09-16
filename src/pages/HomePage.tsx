@@ -27,7 +27,10 @@ export function HomePage() {
         path="/"
         jsonLd={organizationJsonLd()}
       />
-      <section className="hero">
+      <section className="hero hero--banner">
+        <div className="hero__atmosphere" aria-hidden="true">
+          <MediaImg className="hero__atmosphere-img" src={images.heroShowcase} alt="" />
+        </div>
         <div className="container hero__layout">
           <div className="hero__copy">
             <p className="eyebrow">Российское производство · доставка по России</p>

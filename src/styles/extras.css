@@ -177,9 +177,12 @@
   }
 }
 
-/* Full-bleed section bands — content stays in .container */
-.section.band-ice {
-  background: linear-gradient(180deg, #eaf5f8 0%, #f4f8f9 100%);
+@media (prefers-reduced-motion: reduce) {
+  .hero--banner .hero__atmosphere-img {
+    filter: none;
+    opacity: 0.35;
+    transform: none;
+  }
 }
 
 .section.band-white {
