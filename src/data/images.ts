@@ -43,5 +43,6 @@ export const images = {
   faucetDualSilver: asset('images/faucet-dual-silver.png'),
   aquasotaHowItWorks: asset('images/aquasota-how-it-works.jpg'),
   aquasota2Kit: asset('images/aquasota-2-kit.png'),
+  filterAfterUse: asset('images/filter-after-use-2x2.jpg'),
   filterAsTf1: asset('images/filter-as-tf1.webp'),
 } as const;

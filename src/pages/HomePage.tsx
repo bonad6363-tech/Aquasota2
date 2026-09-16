@@ -271,6 +271,16 @@ export function HomePage() {
                 <h3>Комплектация Аквасота-1 и Аквасота-2</h3>
               </figcaption>
             </figure>
+            <figure className="media-card how-it-works__diagram">
+              <MediaImg
+                className="media-card__img"
+                src={images.filterAfterUse}
+                alt="Фильтр АКВАСОТА после использования: загрязнения на мембране и слоях фильтра"
+              />
+              <figcaption className="media-card__body">
+                <h3>Фильтр после использования</h3>
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
