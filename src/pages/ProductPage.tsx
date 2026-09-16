@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Camera } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 import { Accordion } from '../components/Accordion';
 import { Breadcrumbs } from '../components/Breadcrumbs';
@@ -15,6 +16,11 @@ import { getProduct } from '../data/products';
 import { formatPrice } from '../utils/format';
 import { NotFoundPage } from './NotFoundPage';
 
+const PLACEHOLDER_MARKERS = ['membrane.webp', 'control.webp', 'production.webp', 'og-cover.webp', 'video-cover.webp'];
+
+function isPlaceholderSrc(src: string) {
+  return PLACEHOLDER_MARKERS.some((m) => src.includes(m));
+}
 const tabs = [
   { id: 'desc', label: 'Описание' },
   { id: 'specs', label: 'Характеристики' },
@@ -41,6 +47,9 @@ export function ProductPage() {
   }
 
   const category = categories.find((item) => item.slug === product.category);
+  const realImages = product.images.filter((item) => item.src && !isPlaceholderSrc(item.src));
+  const hasGallery = realImages.length > 0;
+  const activeImage = hasGallery ? realImages[Math.min(image, realImages.length - 1)] : undefined;
 
   return (
     <div className="container" style={{ paddingBottom: 80 }}>
@@ -48,7 +57,7 @@ export function ProductPage() {
         title={product.name}
         description={product.shortPurpose}
         path={`/tovar/${product.slug}`}
-        image={product.images[0].src}
+        image={activeImage?.src}
         jsonLd={[
           organizationJsonLd(),
           {
@@ -57,7 +66,9 @@ export function ProductPage() {
             name: product.name,
             sku: product.sku,
             description: product.shortPurpose,
-            image: `${companyInfo.siteUrl}${product.images[0].src}`,
+            ...(activeImage
+              ? { image: `${companyInfo.siteUrl}${activeImage.src}` }
+              : {}),
             brand: companyInfo.brand,
             offers: {
               '@type': 'Offer',
@@ -87,25 +98,35 @@ export function ProductPage() {
       />
       <section className="product-hero">
         <div>
-          <MediaImg
-            src={product.images[image].src}
-            alt={product.images[image].alt}
-            className="gallery__main"
-            priority
-          />
-          <div className="thumbs">
-            {product.images.map((item, index) => (
-              <button
-                key={item.src + index}
-                type="button"
-                className={index === image ? 'is-active' : ''}
-                onClick={() => setImage(index)}
-                aria-label={`Показать изображение ${index + 1}`}
-              >
-                <MediaImg src={item.src} alt={item.alt} />
-              </button>
-            ))}
-          </div>
+          {hasGallery && activeImage ? (
+            <>
+              <MediaImg
+                src={activeImage.src}
+                alt={activeImage.alt}
+                className="gallery__main"
+                priority
+              />
+              {realImages.length > 1 ? (
+                <div className="thumbs">
+                  {realImages.map((item, index) => (
+                    <button
+                      key={item.src + index}
+                      type="button"
+                      className={index === image ? 'is-active' : ''}
+                      onClick={() => setImage(index)}
+                      aria-label={`Показать изображение ${index + 1}`}
+                    >
+                      <MediaImg src={item.src} alt={item.alt} />
+                    </button>
+                  ))}
+                </div>
+              ) : null}
+            </>
+          ) : (
+            <div className="gallery__main gallery__main--empty" aria-label="Фото товара скоро появится">
+              <Camera size={56} strokeWidth={1.5} />
+            </div>
+          )}
         </div>
         <div className="stack-lg">
           <div className="stack">

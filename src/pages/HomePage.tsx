@@ -251,19 +251,25 @@ export function HomePage() {
             </article>
           </div>
           <div className="how-it-works__gallery">
-            <figure className="how-it-works__diagram">
+            <figure className="media-card how-it-works__diagram">
               <MediaImg
+                className="media-card__img"
                 src={images.aquasotaHowItWorks}
                 alt="Схема работы фильтра АКВАСОТА: ёмкость с исходной водой выше ёмкости с очищенной, перепад 0,2–1,0 м"
               />
-              <figcaption>Схема подключения</figcaption>
+              <figcaption className="media-card__body">
+                <h3>Схема подключения</h3>
+              </figcaption>
             </figure>
-            <figure className="how-it-works__diagram">
+            <figure className="media-card how-it-works__diagram">
               <MediaImg
+                className="media-card__img"
                 src={images.aquasota2Kit}
                 alt="Комплектация Аквасота-1 и Аквасота-2: фильтр, трубка 1,5 м, сумка"
               />
-              <figcaption>Комплектация Аквасота-1 и Аквасота-2</figcaption>
+              <figcaption className="media-card__body">
+                <h3>Комплектация Аквасота-1 и Аквасота-2</h3>
+              </figcaption>
             </figure>
           </div>
         </div>

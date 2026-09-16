@@ -1,3 +1,4 @@
+import { Camera } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { MediaImg } from '../components/MediaImg';
@@ -25,7 +26,13 @@ export function CartPage() {
           <div className="cart-list">
             {lines.map((line) => (
               <article className="cart-row" key={line.product.slug}>
-                <MediaImg src={line.product.images[0].src} alt={line.product.images[0].alt} />
+                {line.product.images[0] ? (
+                  <MediaImg src={line.product.images[0].src} alt={line.product.images[0].alt} />
+                ) : (
+                  <div className="cart-row__placeholder" aria-hidden="true">
+                    <Camera size={28} strokeWidth={1.5} />
+                  </div>
+                )}
                 <div>
                   <Link to={`/tovar/${line.product.slug}`}>
                     <strong>{line.product.name}</strong>
